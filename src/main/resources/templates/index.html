@@ -13,34 +13,6 @@
 <button id="start-btn">start</button>
 <button id="stop-btn">stop</button>
 <span id="demo">hello</span>
-<script th:inline="javascript">
-setInterval (pt, 1000);
-function pt(){
-var url ="/time-remaining";
-$.getJSON( url, function( data ){
- console.log(data);
-document.getElementById("demo").innerHTML = data;
-});
-}
-
-
-$("#start-btn").click(
-function() {
-var url ="/start";
-  alert( "Handler for .start() called." );
-  $.getJSON(url, function(data){console.log(data)});
-});
-
-$("#stop-btn").click(
-function() {
-var url ="/stop";
-  alert( "Handler for .stop() called." );
-  $.getJSON(url, function(data){console.log(data)});
-  $("#stop-btn").attr('disabled','disabled');
-});
-
-
-</script>
-
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
 </body>
 </html>
